@@ -1,0 +1,88 @@
+.container {
+  max-width: 120rem; // to allow our header adjust if the viewport width is less than 120rem
+  margin: 8px auto;
+  background-color: var(--color-grey-light-2);
+  box-shadow: var(--shadow-black);
+  min-height: 80rem;
+
+  @media only screen and (max-width: $-bp-largest) {
+    margin: 0;
+    max-width: 100%;
+  }
+}
+
+.header {
+  font-size: 1.4rem;
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: var(--line);
+  display: flex;
+  justify-content: space-between; // to align items along the main axis
+  align-items: center; //align items along the cross axis
+
+  @media only screen and (max-width: $-bp-smallest) {
+    flex-wrap: wrap; // allow flex items wrap into a new line if they don't have enough space
+    align-content: space-around;
+
+    height: 11rem;
+  }
+}
+
+.content {
+  display: flex;
+  @media only screen and (max-width: $-bp-medium) {
+    flex-direction: column;
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-grey-dark-1);
+  flex: 0 0 18%; // sets the grow 0, shrink: no, and base which we use to define our width in flex to 18%
+}
+
+.hotel-view {
+  background-color: #fff;
+  flex: 1; // sets the grow to occupy as much space as available
+}
+
+.detail {
+  font-size: 1.4rem;
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line);
+  @media only screen and (max-width: $-bp-medium) {
+    padding: 3rem;
+  }
+
+  @media only screen and (max-width: $-bp-small) {
+    flex-direction: column;
+  }
+
+  .description {
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    flex: 0 0 60%;
+    margin-right: 4.5rem; // corresponds to padding of parent element to be assymetric(uniformity)
+
+    @media only screen and (max-width: $-bp-medium) {
+      padding: 2rem;
+      margin-right: 3rem;
+    }
+    @media only screen and (max-width: $-bp-small) {
+      margin: 0;
+      margin-bottom: 3rem;
+    }
+  }
+  .user-reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+  }
+}
